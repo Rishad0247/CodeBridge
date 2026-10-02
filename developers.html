@@ -1,0 +1,2939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Developers — CodeBridge</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* =========================================================
+           DEVELOPERS PAGE
+        ========================================================= */
+
+        .developers-hero {
+            min-height: 720px;
+            padding: 150px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .developer-hero-title {
+            font-size: clamp(3.2rem, 6vw, 6.2rem);
+            line-height: .95;
+            font-weight: 900;
+            letter-spacing: -4px;
+            margin: 25px 0;
+            max-width: 850px;
+        }
+
+        .developer-hero-description {
+            color: #9ca3af;
+            font-size: 1.08rem;
+            line-height: 1.8;
+            max-width: 650px;
+        }
+
+        .hero-developer-stage {
+            height: 470px;
+            position: relative;
+            perspective: 1200px;
+        }
+
+        .floating-profile {
+            position: absolute;
+            width: 310px;
+            padding: 28px;
+            border-radius: 28px;
+            background: rgba(16, 18, 31, .78);
+            border: 1px solid rgba(255,255,255,.12);
+            backdrop-filter: blur(25px);
+            box-shadow:
+                0 35px 80px rgba(0,0,0,.45),
+                inset 0 1px 0 rgba(255,255,255,.08);
+            transform-style: preserve-3d;
+            animation: floatProfile 6s ease-in-out infinite;
+        }
+
+        .floating-profile.main-profile {
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%) rotateY(-10deg) rotateX(5deg);
+            z-index: 3;
+        }
+
+        .floating-profile.profile-back-one {
+            width: 230px;
+            top: 10px;
+            left: 4%;
+            opacity: .65;
+            transform: rotateY(20deg) rotateZ(-5deg);
+            animation-delay: -2s;
+        }
+
+        .floating-profile.profile-back-two {
+            width: 230px;
+            bottom: 20px;
+            right: 0;
+            opacity: .6;
+            transform: rotateY(-20deg) rotateZ(5deg);
+            animation-delay: -4s;
+        }
+
+        @keyframes floatProfile {
+            0%, 100% {
+                margin-top: 0;
+            }
+            50% {
+                margin-top: -18px;
+            }
+        }
+
+        .hero-avatar {
+            width: 76px;
+            height: 76px;
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: white;
+            background: linear-gradient(135deg, #7c3aed, #06b6d4);
+            box-shadow: 0 15px 35px rgba(124,58,237,.35);
+        }
+
+        .developer-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.35rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #7c3aed, #06b6d4);
+            box-shadow: 0 10px 30px rgba(124,58,237,.25);
+            flex-shrink: 0;
+        }
+
+        .avatar-blue {
+            background: linear-gradient(135deg,#2563eb,#06b6d4);
+        }
+
+        .avatar-green {
+            background: linear-gradient(135deg,#059669,#22c55e);
+        }
+
+        .avatar-orange {
+            background: linear-gradient(135deg,#f97316,#ec4899);
+        }
+
+        .avatar-pink {
+            background: linear-gradient(135deg,#db2777,#8b5cf6);
+        }
+
+        .avatar-yellow {
+            background: linear-gradient(135deg,#eab308,#f97316);
+        }
+
+        .online-dot {
+            width: 9px;
+            height: 9px;
+            background: #22c55e;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 12px #22c55e;
+        }
+
+        .offline-dot {
+            width: 9px;
+            height: 9px;
+            background: #6b7280;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .mini-skill {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 9px;
+            background: rgba(255,255,255,.06);
+            border: 1px solid rgba(255,255,255,.08);
+            color: #cbd5e1;
+            font-size: .7rem;
+            margin: 3px;
+        }
+
+        .hero-profile-stats {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid rgba(255,255,255,.08);
+            margin-top: 20px;
+            padding-top: 18px;
+        }
+
+        .hero-profile-stats small {
+            display: block;
+            color: #6b7280;
+            font-size: .65rem;
+        }
+
+        .hero-profile-stats strong {
+            font-size: .95rem;
+        }
+
+        /* =========================================================
+           STATS
+        ========================================================= */
+
+        .developer-stats {
+            padding: 35px 0;
+            border-top: 1px solid rgba(255,255,255,.06);
+            border-bottom: 1px solid rgba(255,255,255,.06);
+            background: rgba(255,255,255,.015);
+        }
+
+        .developer-stat {
+            text-align: center;
+            padding: 15px;
+            position: relative;
+        }
+
+        .developer-stat:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 15%;
+            height: 70%;
+            width: 1px;
+            background: rgba(255,255,255,.08);
+        }
+
+        .developer-stat strong {
+            display: block;
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(90deg,#fff,#a78bfa,#67e8f9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .developer-stat span {
+            color: #6b7280;
+            font-size: .8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* =========================================================
+           DIRECTORY
+        ========================================================= */
+
+        .developer-toolbar {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .developer-search {
+            min-width: 320px;
+            position: relative;
+        }
+
+        .developer-search i {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6b7280;
+        }
+
+        .developer-search input {
+            width: 100%;
+            padding: 15px 18px 15px 48px;
+            border-radius: 15px;
+            background: rgba(255,255,255,.045);
+            border: 1px solid rgba(255,255,255,.1);
+            color: white;
+            outline: none;
+            transition: .3s;
+        }
+
+        .developer-search input:focus {
+            border-color: rgba(139,92,246,.7);
+            box-shadow: 0 0 30px rgba(124,58,237,.12);
+        }
+
+        .developer-search input::placeholder {
+            color: #64748b;
+        }
+
+        .developer-filter-row {
+            display: flex;
+            gap: 9px;
+            flex-wrap: wrap;
+            margin-bottom: 45px;
+        }
+
+        .developer-filter {
+            border: 1px solid rgba(255,255,255,.1);
+            background: rgba(255,255,255,.035);
+            color: #94a3b8;
+            padding: 10px 17px;
+            border-radius: 12px;
+            transition: .3s;
+            font-size: .82rem;
+        }
+
+        .developer-filter:hover,
+        .developer-filter.active {
+            color: white;
+            border-color: rgba(139,92,246,.7);
+            background: rgba(124,58,237,.14);
+            box-shadow: 0 0 25px rgba(124,58,237,.12);
+        }
+
+        /* =========================================================
+           DEVELOPER CARD
+        ========================================================= */
+
+        .developer-card-wrap {
+            perspective: 1200px;
+        }
+
+        .developer-card {
+            height: 100%;
+            min-height: 390px;
+            padding: 26px;
+            border-radius: 25px;
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.075),
+                    rgba(255,255,255,.025)
+                );
+            border: 1px solid rgba(255,255,255,.1);
+            box-shadow:
+                0 25px 60px rgba(0,0,0,.25),
+                inset 0 1px 0 rgba(255,255,255,.06);
+            transform-style: preserve-3d;
+            transition: transform .25s ease, border-color .3s, box-shadow .3s;
+        }
+
+        .developer-card::before {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: rgba(124,58,237,.16);
+            filter: blur(60px);
+            top: -90px;
+            right: -70px;
+            pointer-events: none;
+        }
+
+        .developer-card:hover {
+            border-color: rgba(139,92,246,.45);
+            box-shadow:
+                0 35px 80px rgba(0,0,0,.38),
+                0 0 50px rgba(124,58,237,.08);
+        }
+
+        .developer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            position: relative;
+            z-index: 2;
+        }
+
+        .availability {
+            padding: 7px 11px;
+            border-radius: 20px;
+            font-size: .65rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(34,197,94,.08);
+            color: #86efac;
+            border: 1px solid rgba(34,197,94,.18);
+        }
+
+        .availability.busy {
+            background: rgba(245,158,11,.08);
+            color: #fcd34d;
+            border-color: rgba(245,158,11,.18);
+        }
+
+        .developer-name {
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin: 18px 0 4px;
+        }
+
+        .developer-role {
+            color: #8b5cf6;
+            font-size: .8rem;
+            font-weight: 600;
+        }
+
+        .developer-bio {
+            color: #8b95a7;
+            font-size: .8rem;
+            line-height: 1.7;
+            margin: 18px 0;
+        }
+
+        .developer-skills {
+            margin: 15px -3px;
+        }
+
+        .skill-pill {
+            display: inline-block;
+            padding: 7px 10px;
+            margin: 3px;
+            border-radius: 8px;
+            color: #cbd5e1;
+            background: rgba(255,255,255,.045);
+            border: 1px solid rgba(255,255,255,.07);
+            font-size: .67rem;
+        }
+
+        .developer-card-bottom {
+            position: absolute;
+            bottom: 24px;
+            left: 26px;
+            right: 26px;
+            border-top: 1px solid rgba(255,255,255,.07);
+            padding-top: 17px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .developer-metrics {
+            display: flex;
+            gap: 20px;
+        }
+
+        .developer-metric small {
+            color: #64748b;
+            display: block;
+            font-size: .62rem;
+        }
+
+        .developer-metric strong {
+            font-size: .78rem;
+        }
+
+        .view-developer {
+            border: 1px solid rgba(139,92,246,.3);
+            background: rgba(124,58,237,.08);
+            color: #c4b5fd;
+            width: 38px;
+            height: 38px;
+            border-radius: 11px;
+            transition: .3s;
+        }
+
+        .view-developer:hover {
+            background: #7c3aed;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* =========================================================
+           FEATURED DEVELOPER
+        ========================================================= */
+
+        .featured-developer {
+            border-radius: 30px;
+            padding: 45px;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(124,58,237,.18),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,.06),
+                    rgba(255,255,255,.018)
+                );
+            border: 1px solid rgba(255,255,255,.1);
+        }
+
+        .featured-developer::after {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            border: 1px solid rgba(139,92,246,.13);
+            right: -130px;
+            top: -150px;
+            box-shadow:
+                0 0 0 45px rgba(139,92,246,.03),
+                0 0 0 90px rgba(139,92,246,.02);
+        }
+
+        .featured-avatar {
+            width: 125px;
+            height: 125px;
+            border-radius: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.4rem;
+            font-weight: 900;
+            background: linear-gradient(135deg,#7c3aed,#06b6d4);
+            box-shadow:
+                0 25px 50px rgba(124,58,237,.3),
+                0 0 60px rgba(6,182,212,.12);
+            transform: rotate(-5deg);
+        }
+
+        .featured-label {
+            color: #a78bfa;
+            font-size: .68rem;
+            letter-spacing: 2px;
+            font-weight: 800;
+        }
+
+        .featured-title {
+            font-size: 2.4rem;
+            font-weight: 850;
+            margin: 8px 0;
+        }
+
+        .featured-description {
+            color: #8b95a7;
+            line-height: 1.8;
+            max-width: 600px;
+        }
+
+        /* =========================================================
+           LIST GROUP
+        ========================================================= */
+
+        .developer-list {
+            background: transparent;
+            border: 0;
+        }
+
+        .developer-list .list-group-item {
+            background: rgba(255,255,255,.025);
+            color: #d1d5db;
+            border: 1px solid rgba(255,255,255,.07);
+            margin-bottom: 10px;
+            border-radius: 14px !important;
+            padding: 16px;
+        }
+
+        .developer-list-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(124,58,237,.12);
+            color: #a78bfa;
+            margin-right: 13px;
+        }
+
+        /* =========================================================
+           MODALS
+        ========================================================= */
+
+        .developer-modal .modal-content {
+            background: #11131f;
+            color: white;
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 40px 100px rgba(0,0,0,.6);
+        }
+
+        .developer-modal .modal-header {
+            border-color: rgba(255,255,255,.08);
+        }
+
+        .developer-modal .modal-footer {
+            border-color: rgba(255,255,255,.08);
+        }
+
+        .dark-form-control {
+            background: rgba(255,255,255,.045) !important;
+            border: 1px solid rgba(255,255,255,.1) !important;
+            color: white !important;
+            border-radius: 12px;
+            padding: 12px 14px;
+        }
+
+        .dark-form-control:focus {
+            border-color: #8b5cf6 !important;
+            box-shadow: 0 0 20px rgba(124,58,237,.12) !important;
+        }
+
+        .dark-form-control::placeholder {
+            color: #64748b;
+        }
+
+        .developer-detail-box {
+            background: rgba(255,255,255,.035);
+            border: 1px solid rgba(255,255,255,.07);
+            border-radius: 15px;
+            padding: 17px;
+        }
+
+        .developer-detail-box small {
+            display: block;
+            color: #64748b;
+            font-size: .68rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* =========================================================
+           NO RESULTS
+        ========================================================= */
+
+        .developer-no-results {
+            text-align: center;
+            padding: 80px 20px;
+            color: #64748b;
+        }
+
+        .developer-no-results i {
+            font-size: 3rem;
+            color: #7c3aed;
+        }
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 991px) {
+
+            .developers-hero {
+                padding-top: 130px;
+            }
+
+            .developer-hero-title {
+                letter-spacing: -2px;
+            }
+
+            .hero-developer-stage {
+                margin-top: 50px;
+                height: 390px;
+            }
+
+            .floating-profile.main-profile {
+                left: 50%;
+            }
+
+            .profile-back-one,
+            .profile-back-two {
+                opacity: .35;
+            }
+
+            .developer-toolbar {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .developer-search {
+                width: 100%;
+            }
+
+            .featured-developer {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 767px) {
+
+            .developer-hero-title {
+                font-size: 3.3rem;
+            }
+
+            .hero-developer-stage {
+                height: 350px;
+            }
+
+            .floating-profile.main-profile {
+                width: 285px;
+            }
+
+            .floating-profile.profile-back-one,
+            .floating-profile.profile-back-two {
+                display: none;
+            }
+
+            .developer-stat:not(:last-child)::after {
+                display: none;
+            }
+
+            .featured-developer {
+                padding: 25px;
+            }
+
+            .featured-avatar {
+                width: 95px;
+                height: 95px;
+                font-size: 1.8rem;
+                border-radius: 28px;
+                margin-bottom: 25px;
+            }
+
+            .featured-title {
+                font-size: 1.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Background -->
+<div class="background-grid"></div>
+<div class="glow glow-one"></div>
+<div class="glow glow-two"></div>
+<div class="glow glow-three"></div>
+<div id="particles"></div>
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<nav class="navbar navbar-expand-lg fixed-top glass-navbar">
+
+    <div class="container">
+
+        <a class="navbar-brand logo" href="index.html">
+            <span class="logo-icon">&lt;/&gt;</span>
+            <span>Code<span class="gradient-text">Bridge</span></span>
+        </a>
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarMenu"
+            aria-label="Toggle navigation">
+
+            <i class="bi bi-list text-white fs-2"></i>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+
+            <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="projects.html">Projects</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="developers.html">Developers</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#how">How It Works</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+
+            </ul>
+
+            <button
+                class="btn nav-login"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal">
+
+                Login
+
+            </button>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="developers-hero">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-7">
+
+                <div class="status-pill">
+
+                    <span class="status-dot"></span>
+
+                    120+ developers available
+
+                </div>
+
+                <h1 class="developer-hero-title">
+
+                    Meet the people
+                    <span class="gradient-text">
+                        who build.
+                    </span>
+
+                </h1>
+
+                <p class="developer-hero-description">
+
+                    Discover talented student developers, designers and
+                    programmers ready to turn ideas into real products.
+                    Find the right skills for your next project.
+
+                </p>
+
+                <div class="project-hero-buttons mt-4">
+
+                    <a href="#developer-directory"
+                       class="btn btn-primary-3d">
+
+                        Explore Developers
+
+                        <i class="bi bi-arrow-down"></i>
+
+                    </a>
+
+                    <button
+                        class="btn btn-outline-3d"
+                        data-bs-toggle="modal"
+                        data-bs-target="#hireModal">
+
+                        Hire a Developer
+
+                        <i class="bi bi-person-plus"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- 3D PROFILE STAGE -->
+
+            <div class="col-lg-5">
+
+                <div class="hero-developer-stage">
+
+                    <!-- Back profile -->
+                    <div class="floating-profile profile-back-one">
+
+                        <div class="d-flex align-items-center gap-3">
+
+                            <div class="hero-avatar avatar-blue">
+                                RK
+                            </div>
+
+                            <div>
+                                <strong>Rahul K.</strong>
+                                <small class="d-block text-secondary">
+                                    React Developer
+                                </small>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Main profile -->
+
+                    <div class="floating-profile main-profile">
+
+                        <div class="d-flex justify-content-between align-items-start">
+
+                            <div class="hero-avatar">
+                                AS
+                            </div>
+
+                            <span class="availability">
+
+                                <span class="online-dot"></span>
+
+                                Available
+
+                            </span>
+
+                        </div>
+
+                        <h4 class="mt-4 mb-1 fw-bold">
+                            Aarav Shah
+                        </h4>
+
+                        <span class="text-secondary small">
+                            Full Stack Developer
+                        </span>
+
+                        <div class="mt-3">
+
+                            <span class="mini-skill">React</span>
+                            <span class="mini-skill">Node.js</span>
+                            <span class="mini-skill">MongoDB</span>
+                            <span class="mini-skill">Python</span>
+
+                        </div>
+
+                        <div class="hero-profile-stats">
+
+                            <div>
+                                <small>PROJECTS</small>
+                                <strong>24</strong>
+                            </div>
+
+                            <div>
+                                <small>RATING</small>
+                                <strong>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    4.9
+                                </strong>
+                            </div>
+
+                            <div>
+                                <small>LEVEL</small>
+                                <strong>Advanced</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Back profile -->
+
+                    <div class="floating-profile profile-back-two">
+
+                        <div class="d-flex align-items-center gap-3">
+
+                            <div class="hero-avatar avatar-green">
+                                NP
+                            </div>
+
+                            <div>
+                                <strong>Neha P.</strong>
+                                <small class="d-block text-secondary">
+                                    UI/UX Designer
+                                </small>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     STATS
+========================================================= -->
+
+<section class="developer-stats">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-6 col-md-3">
+                <div class="developer-stat">
+                    <strong>120+</strong>
+                    <span>Developers</span>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="developer-stat">
+                    <strong>18+</strong>
+                    <span>Skills</span>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="developer-stat">
+                    <strong>4.8</strong>
+                    <span>Average Rating</span>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="developer-stat">
+                    <strong>250+</strong>
+                    <span>Projects Built</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ALERT
+========================================================= -->
+
+<div class="container mt-5">
+
+    <div class="alert glass-alert" role="alert">
+
+        <i class="bi bi-stars me-2"></i>
+
+        <strong>New talent:</strong>
+
+        Several developers have recently joined CodeBridge.
+        Explore their profiles and find your next collaborator.
+
+        <button
+            type="button"
+            class="btn-close btn-close-white float-end"
+            data-bs-dismiss="alert">
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     DEVELOPER DIRECTORY
+========================================================= -->
+
+<section
+    id="developer-directory"
+    class="section-padding">
+
+    <div class="container">
+
+        <div class="developer-toolbar">
+
+            <div>
+
+                <div class="section-label">
+                    DEVELOPER DIRECTORY
+                </div>
+
+                <h2 class="marketplace-title">
+                    Find your
+                    <span class="gradient-text">
+                        next builder.
+                    </span>
+                </h2>
+
+            </div>
+
+
+            <div class="developer-search">
+
+                <i class="bi bi-search"></i>
+
+                <input
+                    type="text"
+                    id="developerSearch"
+                    placeholder="Search developers or skills...">
+
+            </div>
+
+        </div>
+
+
+        <!-- FILTERS -->
+
+        <div class="developer-filter-row">
+
+            <button
+                class="developer-filter active"
+                data-filter="all">
+
+                All Developers
+
+            </button>
+
+            <button
+                class="developer-filter"
+                data-filter="frontend">
+
+                Frontend
+
+            </button>
+
+            <button
+                class="developer-filter"
+                data-filter="backend">
+
+                Backend
+
+            </button>
+
+            <button
+                class="developer-filter"
+                data-filter="fullstack">
+
+                Full Stack
+
+            </button>
+
+            <button
+                class="developer-filter"
+                data-filter="ai">
+
+                AI / ML
+
+            </button>
+
+            <button
+                class="developer-filter"
+                data-filter="mobile">
+
+                Mobile
+
+            </button>
+
+            <button
+                class="developer-filter"
+                data-filter="design">
+
+                UI / UX
+
+            </button>
+
+        </div>
+
+
+        <!-- DEVELOPER GRID -->
+
+        <div
+            class="row g-4"
+            id="developerGrid">
+
+
+            <!-- DEVELOPER 1 -->
+
+            <div
+                class="col-md-6 col-lg-4 developer-item"
+                data-category="fullstack">
+
+                <div class="developer-card-wrap">
+
+                    <div class="developer-card tilt-developer">
+
+                        <div class="developer-top">
+
+                            <div class="developer-avatar">
+                                AS
+                            </div>
+
+                            <div class="availability">
+
+                                <span class="online-dot"></span>
+
+                                Available
+
+                            </div>
+
+                        </div>
+
+                        <h3 class="developer-name">
+                            Aarav Shah
+                        </h3>
+
+                        <div class="developer-role">
+                            Full Stack Developer
+                        </div>
+
+                        <p class="developer-bio">
+
+                            Builds scalable web applications with
+                            modern JavaScript technologies and APIs.
+
+                        </p>
+
+                        <div class="developer-skills">
+
+                            <span class="skill-pill">React</span>
+                            <span class="skill-pill">Node.js</span>
+                            <span class="skill-pill">MongoDB</span>
+                            <span class="skill-pill">Python</span>
+
+                        </div>
+
+                        <div class="developer-card-bottom">
+
+                            <div class="developer-metrics">
+
+                                <div class="developer-metric">
+                                    <small>PROJECTS</small>
+                                    <strong>24</strong>
+                                </div>
+
+                                <div class="developer-metric">
+                                    <small>RATING</small>
+                                    <strong>
+                                        ★ 4.9
+                                    </strong>
+                                </div>
+
+                            </div>
+
+                            <button
+                                class="view-developer"
+                                onclick="showDeveloper(
+                                    'Aarav Shah',
+                                    'Full Stack Developer',
+                                    'React • Node.js • MongoDB • Python',
+                                    '24',
+                                    '4.9'
+                                )"
+                                data-bs-toggle="tooltip"
+                                title="View developer profile">
+
+                                <i class="bi bi-arrow-up-right"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DEVELOPER 2 -->
+
+            <div
+                class="col-md-6 col-lg-4 developer-item"
+                data-category="frontend">
+
+                <div class="developer-card-wrap">
+
+                    <div class="developer-card tilt-developer">
+
+                        <div class="developer-top">
+
+                            <div class="developer-avatar avatar-blue">
+                                RK
+                            </div>
+
+                            <div class="availability">
+
+                                <span class="online-dot"></span>
+
+                                Available
+
+                            </div>
+
+                        </div>
+
+                        <h3 class="developer-name">
+                            Rushikesh Kulkarni
+                        </h3>
+
+                        <div class="developer-role">
+                            Frontend Developer
+                        </div>
+
+                        <p class="developer-bio">
+
+                            Creates interactive and responsive
+                            interfaces focused on smooth user experiences.
+
+                        </p>
+
+                        <div class="developer-skills">
+
+                            <span class="skill-pill">HTML</span>
+                            <span class="skill-pill">CSS</span>
+                            <span class="skill-pill">JavaScript</span>
+                            <span class="skill-pill">React</span>
+
+                        </div>
+
+                        <div class="developer-card-bottom">
+
+                            <div class="developer-metrics">
+
+                                <div class="developer-metric">
+                                    <small>PROJECTS</small>
+                                    <strong>18</strong>
+                                </div>
+
+                                <div class="developer-metric">
+                                    <small>RATING</small>
+                                    <strong>★ 4.8</strong>
+                                </div>
+
+                            </div>
+
+                            <button
+                                class="view-developer"
+                                onclick="showDeveloper(
+                                    'Rahul Kulkarni',
+                                    'Frontend Developer',
+                                    'HTML • CSS • JavaScript • React',
+                                    '18',
+                                    '4.8'
+                                )"
+                                data-bs-toggle="tooltip"
+                                title="View developer profile">
+
+                                <i class="bi bi-arrow-up-right"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DEVELOPER 3 -->
+
+            <div
+                class="col-md-6 col-lg-4 developer-item"
+                data-category="ai">
+
+                <div class="developer-card-wrap">
+
+                    <div class="developer-card tilt-developer">
+
+                        <div class="developer-top">
+
+                            <div class="developer-avatar avatar-green">
+                                NP
+                            </div>
+
+                            <div class="availability">
+
+                                <span class="online-dot"></span>
+
+                                Available
+
+                            </div>
+
+                        </div>
+
+                        <h3 class="developer-name">
+                            Neha Patil
+                        </h3>
+
+                        <div class="developer-role">
+                            AI / ML Developer
+                        </div>
+
+                        <p class="developer-bio">
+
+                            Works with Python, machine learning models
+                            and intelligent automation solutions.
+
+                        </p>
+
+                        <div class="developer-skills">
+
+                            <span class="skill-pill">Python</span>
+                            <span class="skill-pill">TensorFlow</span>
+                            <span class="skill-pill">OpenCV</span>
+                            <span class="skill-pill">AI</span>
+
+                        </div>
+
+                        <div class="developer-card-bottom">
+
+                            <div class="developer-metrics">
+
+                                <div class="developer-metric">
+                                    <small>PROJECTS</small>
+                                    <strong>21</strong>
+                                </div>
+
+                                <div class="developer-metric">
+                                    <small>RATING</small>
+                                    <strong>★ 4.9</strong>
+                                </div>
+
+                            </div>
+
+                            <button
+                                class="view-developer"
+                                onclick="showDeveloper(
+                                    'Neha Patil',
+                                    'AI / ML Developer',
+                                    'Python • TensorFlow • OpenCV • AI',
+                                    '21',
+                                    '4.9'
+                                )"
+                                data-bs-toggle="tooltip"
+                                title="View developer profile">
+
+                                <i class="bi bi-arrow-up-right"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DEVELOPER 4 -->
+
+            <div
+                class="col-md-6 col-lg-4 developer-item"
+                data-category="backend">
+
+                <div class="developer-card-wrap">
+
+                    <div class="developer-card tilt-developer">
+
+                        <div class="developer-top">
+
+                            <div class="developer-avatar avatar-orange">
+                                VM
+                            </div>
+
+                            <div class="availability busy">
+
+                                <span class="online-dot"
+                                      style="background:#f59e0b;box-shadow:0 0 12px #f59e0b">
+                                </span>
+
+                                Limited
+
+                            </div>
+
+                        </div>
+
+                        <h3 class="developer-name">
+                            Vedant Mehta
+                        </h3>
+
+                        <div class="developer-role">
+                            Backend Developer
+                        </div>
+
+                        <p class="developer-bio">
+
+                            Specializes in APIs, databases and backend
+                            systems for web applications.
+
+                        </p>
+
+                        <div class="developer-skills">
+
+                            <span class="skill-pill">Java</span>
+                            <span class="skill-pill">Spring</span>
+                            <span class="skill-pill">SQL</span>
+                            <span class="skill-pill">APIs</span>
+
+                        </div>
+
+                        <div class="developer-card-bottom">
+
+                            <div class="developer-metrics">
+
+                                <div class="developer-metric">
+                                    <small>PROJECTS</small>
+                                    <strong>31</strong>
+                                </div>
+
+                                <div class="developer-metric">
+                                    <small>RATING</small>
+                                    <strong>★ 4.7</strong>
+                                </div>
+
+                            </div>
+
+                            <button
+                                class="view-developer"
+                                onclick="showDeveloper(
+                                    'Vedant Mehta',
+                                    'Backend Developer',
+                                    'Java • Spring • SQL • APIs',
+                                    '31',
+                                    '4.7'
+                                )"
+                                data-bs-toggle="tooltip"
+                                title="View developer profile">
+
+                                <i class="bi bi-arrow-up-right"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DEVELOPER 5 -->
+
+            <div
+                class="col-md-6 col-lg-4 developer-item"
+                data-category="mobile">
+
+                <div class="developer-card-wrap">
+
+                    <div class="developer-card tilt-developer">
+
+                        <div class="developer-top">
+
+                            <div class="developer-avatar avatar-pink">
+                                SI
+                            </div>
+
+                            <div class="availability">
+
+                                <span class="online-dot"></span>
+
+                                Available
+
+                            </div>
+
+                        </div>
+
+                        <h3 class="developer-name">
+                            Sara Iqbal
+                        </h3>
+
+                        <div class="developer-role">
+                            Mobile Developer
+                        </div>
+
+                        <p class="developer-bio">
+
+                            Builds modern mobile experiences with
+                            cross-platform development frameworks.
+
+                        </p>
+
+                        <div class="developer-skills">
+
+                            <span class="skill-pill">Flutter</span>
+                            <span class="skill-pill">Dart</span>
+                            <span class="skill-pill">Firebase</span>
+                            <span class="skill-pill">UI</span>
+
+                        </div>
+
+                        <div class="developer-card-bottom">
+
+                            <div class="developer-metrics">
+
+                                <div class="developer-metric">
+                                    <small>PROJECTS</small>
+                                    <strong>16</strong>
+                                </div>
+
+                                <div class="developer-metric">
+                                    <small>RATING</small>
+                                    <strong>★ 4.8</strong>
+                                </div>
+
+                            </div>
+
+                            <button
+                                class="view-developer"
+                                onclick="showDeveloper(
+                                    'Sara Iqbal',
+                                    'Mobile Developer',
+                                    'Flutter • Dart • Firebase • UI',
+                                    '16',
+                                    '4.8'
+                                )"
+                                data-bs-toggle="tooltip"
+                                title="View developer profile">
+
+                                <i class="bi bi-arrow-up-right"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DEVELOPER 6 -->
+
+            <div
+                class="col-md-6 col-lg-4 developer-item"
+                data-category="design">
+
+                <div class="developer-card-wrap">
+
+                    <div class="developer-card tilt-developer">
+
+                        <div class="developer-top">
+
+                            <div class="developer-avatar avatar-yellow">
+                                AK
+                            </div>
+
+                            <div class="availability">
+
+                                <span class="online-dot"></span>
+
+                                Available
+
+                            </div>
+
+                        </div>
+
+                        <h3 class="developer-name">
+                            Rishad Shaikh
+                        </h3>
+
+                        <div class="developer-role">
+                            UI / UX Designer
+                        </div>
+
+                        <p class="developer-bio">
+
+                            Designs clean digital products with a focus
+                            on usability, visual systems and interaction.
+
+                        </p>
+
+                        <div class="developer-skills">
+
+                            <span class="skill-pill">Figma</span>
+                            <span class="skill-pill">UI Design</span>
+                            <span class="skill-pill">UX</span>
+                            <span class="skill-pill">Prototyping</span>
+
+                        </div>
+
+                        <div class="developer-card-bottom">
+
+                            <div class="developer-metrics">
+
+                                <div class="developer-metric">
+                                    <small>PROJECTS</small>
+                                    <strong>27</strong>
+                                </div>
+
+                                <div class="developer-metric">
+                                    <small>RATING</small>
+                                    <strong>★ 4.9</strong>
+                                </div>
+
+                            </div>
+
+                            <button
+                                class="view-developer"
+                                onclick="showDeveloper(
+                                    'Ananya Kapoor',
+                                    'UI / UX Designer',
+                                    'Figma • UI Design • UX • Prototyping',
+                                    '27',
+                                    '4.9'
+                                )"
+                                data-bs-toggle="tooltip"
+                                title="View developer profile">
+
+                                <i class="bi bi-arrow-up-right"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- NO RESULTS -->
+
+        <div
+            id="developerNoResults"
+            class="developer-no-results d-none">
+
+            <i class="bi bi-person-x"></i>
+
+            <h3 class="mt-3 text-white">
+                No developers found
+            </h3>
+
+            <p>
+                Try another name, skill or category.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FEATURED DEVELOPER
+========================================================= -->
+
+<section class="section-padding dark-section">
+
+    <div class="container">
+
+        <div class="featured-developer">
+
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-2">
+
+                    <div class="featured-avatar">
+                        AS
+                    </div>
+
+                </div>
+
+                <div class="col-lg-7">
+
+                    <div class="featured-label">
+                        FEATURED BUILDER
+                    </div>
+
+                    <h2 class="featured-title">
+                        Aarav Shah
+                    </h2>
+
+                    <p class="text-secondary mb-2">
+                        Full Stack Developer • Pune
+                    </p>
+
+                    <p class="featured-description">
+
+                        Passionate about turning complex ideas into
+                        simple digital products. Aarav has completed
+                        more than 20 projects across web development,
+                        APIs and automation.
+
+                    </p>
+
+                    <div class="developer-skills">
+
+                        <span class="skill-pill">React</span>
+                        <span class="skill-pill">Node.js</span>
+                        <span class="skill-pill">Python</span>
+                        <span class="skill-pill">MongoDB</span>
+                        <span class="skill-pill">REST APIs</span>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3">
+
+                    <div class="d-grid gap-2">
+
+                        <button
+                            class="btn btn-primary-3d"
+                            onclick="showDeveloper(
+                                'Aarav Shah',
+                                'Full Stack Developer',
+                                'React • Node.js • Python • MongoDB',
+                                '24',
+                                '4.9'
+                            )">
+
+                            View Profile
+
+                        </button>
+
+                        <button
+                            class="btn btn-outline-3d"
+                            data-bs-toggle="modal"
+                            data-bs-target="#hireModal">
+
+                            Hire Developer
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     WHY CODEBRIDGE
+========================================================= -->
+
+<section class="section-padding">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6">
+
+                <div class="section-label">
+                    WHY CODEBRIDGE
+                </div>
+
+                <h2 class="display-5 fw-bold">
+
+                    Find skills.
+                    <span class="gradient-text">
+                        Build together.
+                    </span>
+
+                </h2>
+
+                <p class="text-secondary mt-3">
+
+                    CodeBridge makes it easier for students and
+                    early-career developers to connect with practical
+                    project opportunities.
+
+                </p>
+
+                <div class="list-group developer-list mt-4">
+
+                    <div class="list-group-item d-flex align-items-center">
+
+                        <div class="developer-list-icon">
+                            <i class="bi bi-search"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Skill-based discovery
+                            </strong>
+
+                            <small class="d-block text-secondary">
+                                Search developers by real technical skills.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="list-group-item d-flex align-items-center">
+
+                        <div class="developer-list-icon">
+                            <i class="bi bi-person-check"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Availability status
+                            </strong>
+
+                            <small class="d-block text-secondary">
+                                See who is currently open to projects.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="list-group-item d-flex align-items-center">
+
+                        <div class="developer-list-icon">
+                            <i class="bi bi-rocket-takeoff"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Practical experience
+                            </strong>
+
+                            <small class="d-block text-secondary">
+                                Help developers turn projects into portfolios.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-6">
+
+                <div class="dashboard-3d">
+
+                    <div class="dashboard-header">
+
+                        <div>
+
+                            <small>
+                                TALENT ACTIVITY
+                            </small>
+
+                            <h3>
+                                Developer Growth
+                            </h3>
+
+                        </div>
+
+                        <i class="bi bi-three-dots"></i>
+
+                    </div>
+
+
+                    <div class="fake-chart">
+
+                        <div class="chart-line"></div>
+
+                        <div class="chart-bars">
+
+                            <span style="height:35%"></span>
+                            <span style="height:52%"></span>
+                            <span style="height:45%"></span>
+                            <span style="height:68%"></span>
+                            <span style="height:61%"></span>
+                            <span style="height:87%"></span>
+                            <span style="height:76%"></span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="dashboard-bottom">
+
+                        <div>
+
+                            <small>
+                                New Developers
+                            </small>
+
+                            <strong>
+                                +24%
+                            </strong>
+
+                        </div>
+
+                        <div>
+
+                            <small>
+                                Active Talent
+                            </small>
+
+                            <strong>
+                                +18%
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="cta-section">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <div class="section-label">
+                READY TO BUILD?
+            </div>
+
+            <h2>
+
+                Find someone who can
+                <span class="gradient-text">
+                    build it.
+                </span>
+
+            </h2>
+
+            <p>
+
+                Tell us what you're working on and connect
+                with developers who have the skills you need.
+
+            </p>
+
+            <button
+                class="btn btn-primary-3d btn-lg"
+                data-bs-toggle="modal"
+                data-bs-target="#hireModal">
+
+                Find a Developer
+
+                <i class="bi bi-arrow-up-right"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     DEVELOPER PROFILE MODAL
+========================================================= -->
+
+<div
+    class="modal fade developer-modal"
+    id="developerModal"
+    tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+                    Developer Profile
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close btn-close-white"
+                    data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="text-center mb-4">
+
+                    <div
+                        id="detailAvatar"
+                        class="developer-avatar mx-auto">
+
+                        AS
+
+                    </div>
+
+                    <h3
+                        id="detailName"
+                        class="mt-3 mb-1">
+
+                        Aarav Shah
+
+                    </h3>
+
+                    <p
+                        id="detailRole"
+                        class="text-secondary">
+
+                        Full Stack Developer
+
+                    </p>
+
+                </div>
+
+
+                <div class="row g-3">
+
+                    <div class="col-12">
+
+                        <div class="developer-detail-box">
+
+                            <small>
+                                Skills
+                            </small>
+
+                            <strong id="detailSkills">
+                                React • Node.js • MongoDB
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-6">
+
+                        <div class="developer-detail-box">
+
+                            <small>
+                                Projects
+                            </small>
+
+                            <strong id="detailProjects">
+                                24
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-6">
+
+                        <div class="developer-detail-box">
+
+                            <small>
+                                Rating
+                            </small>
+
+                            <strong>
+                                <i class="bi bi-star-fill text-warning"></i>
+
+                                <span id="detailRating">
+                                    4.9
+                                </span>
+
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button
+                    class="btn btn-outline-3d"
+                    data-bs-dismiss="modal">
+
+                    Close
+
+                </button>
+
+                <button
+                    class="btn btn-primary-3d"
+                    data-bs-toggle="modal"
+                    data-bs-target="#hireModal">
+
+                    Hire Developer
+
+                    <i class="bi bi-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     HIRE MODAL
+========================================================= -->
+
+<div
+    class="modal fade developer-modal"
+    id="hireModal"
+    tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <small class="text-secondary">
+                        CODEBRIDGE
+                    </small>
+
+                    <h5 class="modal-title">
+                        Start a project
+                    </h5>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="btn-close btn-close-white"
+                    data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+
+            <form id="hireForm" novalidate>
+
+                <div class="modal-body">
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control dark-form-control"
+                            required
+                            placeholder="Enter your name">
+
+                        <div class="invalid-feedback">
+                            Please enter your name.
+                        </div>
+
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            class="form-control dark-form-control"
+                            required
+                            placeholder="you@example.com">
+
+                        <div class="invalid-feedback">
+                            Please enter a valid email.
+                        </div>
+
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            What do you need?
+                        </label>
+
+                        <select
+                            class="form-select dark-form-control"
+                            required>
+
+                            <option value="">
+                                Select project type
+                            </option>
+
+                            <option>
+                                Website
+                            </option>
+
+                            <option>
+                                Mobile App
+                            </option>
+
+                            <option>
+                                AI / ML Project
+                            </option>
+
+                            <option>
+                                Backend / API
+                            </option>
+
+                            <option>
+                                UI / UX Design
+                            </option>
+
+                        </select>
+
+                        <div class="invalid-feedback">
+                            Select a project type.
+                        </div>
+
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Project Description
+                        </label>
+
+                        <textarea
+                            class="form-control dark-form-control"
+                            rows="4"
+                            required
+                            placeholder="Describe what you want to build..."></textarea>
+
+                        <div class="invalid-feedback">
+                            Please describe your project.
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="modal-footer">
+
+                    <button
+                        type="button"
+                        class="btn btn-outline-3d"
+                        data-bs-dismiss="modal">
+
+                        Cancel
+
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary-3d">
+
+                        Send Request
+
+                        <i class="bi bi-send"></i>
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     LOGIN MODAL
+========================================================= -->
+
+<div
+    class="modal fade developer-modal"
+    id="loginModal"
+    tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+                    Welcome back
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close btn-close-white"
+                    data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+
+            <form id="loginForm" novalidate>
+
+                <div class="modal-body">
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            class="form-control dark-form-control"
+                            required
+                            placeholder="Enter your email">
+
+                        <div class="invalid-feedback">
+                            Enter a valid email.
+                        </div>
+
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            class="form-control dark-form-control"
+                            required
+                            minlength="6"
+                            placeholder="Enter your password">
+
+                        <div class="invalid-feedback">
+                            Password must contain at least 6 characters.
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="modal-footer">
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary-3d w-100">
+
+                        Login
+
+                        <i class="bi bi-box-arrow-in-right"></i>
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="row g-5">
+
+            <div class="col-lg-5">
+
+                <div class="footer-logo">
+                    &lt;/&gt; Code<span class="gradient-text">Bridge</span>
+                </div>
+
+                <p class="footer-description">
+
+                    A project-based platform connecting student
+                    developers with real-world coding opportunities.
+
+                </p>
+
+                <div class="socials">
+
+                    <a href="#">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="bi bi-github"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-lg-2">
+
+                <h6>
+                    Platform
+                </h6>
+
+                <div class="footer-links">
+
+                    <a href="projects.html">
+                        Projects
+                    </a>
+
+                    <a href="developers.html">
+                        Developers
+                    </a>
+
+                    <a href="index.html#how">
+                        How It Works
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-lg-2">
+
+                <h6>
+                    Company
+                </h6>
+
+                <div class="footer-links">
+
+                    <a href="about.html">
+                        About
+                    </a>
+
+                    <a href="#">
+                        Contact
+                    </a>
+
+                    <a href="#">
+                        Privacy
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-3">
+
+                <h6>
+                    Get in touch
+                </h6>
+
+                <div class="footer-contact">
+
+                    <p>
+                        <i class="bi bi-envelope"></i>
+                        hello@codebridge.dev
+                    </p>
+
+                    <p>
+                        <i class="bi bi-geo-alt"></i>
+                        Pune, India
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 CodeBridge. All rights reserved.
+            </span>
+
+            <span>
+                Built for builders.
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     BOOTSTRAP
+========================================================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+
+
+<script>
+
+    /* =========================================================
+       PARTICLES
+    ========================================================= */
+
+    const particleContainer =
+        document.getElementById("particles");
+
+    for (let i = 0; i < 40; i++) {
+
+        const particle =
+            document.createElement("span");
+
+        particle.className = "particle";
+
+        particle.style.left =
+            Math.random() * 100 + "%";
+
+        particle.style.top =
+            Math.random() * 100 + "%";
+
+        particle.style.animationDelay =
+            Math.random() * 6 + "s";
+
+        particle.style.animationDuration =
+            4 + Math.random() * 6 + "s";
+
+        particleContainer.appendChild(particle);
+
+    }
+
+
+    /* =========================================================
+       3D CARD TILT
+    ========================================================= */
+
+    document
+        .querySelectorAll(".tilt-developer")
+        .forEach(card => {
+
+            card.addEventListener("mousemove", function(e) {
+
+                const rect =
+                    card.getBoundingClientRect();
+
+                const x =
+                    e.clientX - rect.left;
+
+                const y =
+                    e.clientY - rect.top;
+
+                const centerX =
+                    rect.width / 2;
+
+                const centerY =
+                    rect.height / 2;
+
+                const rotateX =
+                    ((y - centerY) / centerY) * -5;
+
+                const rotateY =
+                    ((x - centerX) / centerX) * 5;
+
+                card.style.transform =
+                    `perspective(1200px)
+                     rotateX(${rotateX}deg)
+                     rotateY(${rotateY}deg)
+                     translateY(-8px)`;
+
+            });
+
+
+            card.addEventListener("mouseleave", function() {
+
+                card.style.transform =
+                    "perspective(1200px) rotateX(0deg) rotateY(0deg)";
+
+            });
+
+        });
+
+
+    /* =========================================================
+       FILTER + SEARCH
+    ========================================================= */
+
+    const filterButtons =
+        document.querySelectorAll(".developer-filter");
+
+    const developerItems =
+        document.querySelectorAll(".developer-item");
+
+    const searchInput =
+        document.getElementById("developerSearch");
+
+    const noResults =
+        document.getElementById("developerNoResults");
+
+    let activeFilter = "all";
+
+
+    function updateDevelopers() {
+
+        const query =
+            searchInput.value.toLowerCase().trim();
+
+        let visible = 0;
+
+        developerItems.forEach(item => {
+
+            const category =
+                item.dataset.category;
+
+            const text =
+                item.innerText.toLowerCase();
+
+            const categoryMatch =
+                activeFilter === "all" ||
+                category === activeFilter;
+
+            const searchMatch =
+                text.includes(query);
+
+            if (categoryMatch && searchMatch) {
+
+                item.style.display = "";
+
+                visible++;
+
+            } else {
+
+                item.style.display = "none";
+
+            }
+
+        });
+
+
+        noResults.classList.toggle(
+            "d-none",
+            visible !== 0
+        );
+
+    }
+
+
+    filterButtons.forEach(button => {
+
+        button.addEventListener("click", function() {
+
+            filterButtons.forEach(btn =>
+                btn.classList.remove("active")
+            );
+
+            this.classList.add("active");
+
+            activeFilter =
+                this.dataset.filter;
+
+            updateDevelopers();
+
+        });
+
+    });
+
+
+    searchInput.addEventListener(
+        "input",
+        updateDevelopers
+    );
+
+
+    /* =========================================================
+       DEVELOPER MODAL
+    ========================================================= */
+
+    function showDeveloper(
+        name,
+        role,
+        skills,
+        projects,
+        rating
+    ) {
+
+        document.getElementById("detailName")
+            .textContent = name;
+
+        document.getElementById("detailRole")
+            .textContent = role;
+
+        document.getElementById("detailSkills")
+            .textContent = skills;
+
+        document.getElementById("detailProjects")
+            .textContent = projects;
+
+        document.getElementById("detailRating")
+            .textContent = rating;
+
+        const initials =
+            name
+                .split(" ")
+                .map(word => word[0])
+                .join("");
+
+        document.getElementById("detailAvatar")
+            .textContent = initials;
+
+        const modal =
+            new bootstrap.Modal(
+                document.getElementById(
+                    "developerModal"
+                )
+            );
+
+        modal.show();
+
+    }
+
+
+    /* =========================================================
+       TOOLTIP
+    ========================================================= */
+
+    document
+        .querySelectorAll(
+            '[data-bs-toggle="tooltip"]'
+        )
+        .forEach(element => {
+
+            new bootstrap.Tooltip(element);
+
+        });
+
+
+    /* =========================================================
+       HIRE FORM VALIDATION
+    ========================================================= */
+
+    const hireForm =
+        document.getElementById("hireForm");
+
+    hireForm.addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+            if (!hireForm.checkValidity()) {
+
+                event.stopPropagation();
+
+            } else {
+
+                alert(
+                    "Your project request has been submitted successfully!"
+                );
+
+                hireForm.reset();
+
+                bootstrap.Modal
+                    .getInstance(
+                        document.getElementById(
+                            "hireModal"
+                        )
+                    )
+                    .hide();
+
+            }
+
+            hireForm.classList.add(
+                "was-validated"
+            );
+
+        }
+    );
+
+
+    /* =========================================================
+       LOGIN VALIDATION
+    ========================================================= */
+
+    const loginForm =
+        document.getElementById("loginForm");
+
+    loginForm.addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+            if (!loginForm.checkValidity()) {
+
+                event.stopPropagation();
+
+            } else {
+
+                alert(
+                    "Login successful!"
+                );
+
+            }
+
+            loginForm.classList.add(
+                "was-validated"
+            );
+
+        }
+    );
+
+</script>
+
+</body>
+</html>

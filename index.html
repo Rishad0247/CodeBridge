@@ -1,0 +1,1897 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CodeBridge — Build Beyond Limits</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap 5 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BACKGROUND EFFECTS
+===================================================== -->
+
+<div class="background-grid"></div>
+
+<div class="glow glow-one"></div>
+<div class="glow glow-two"></div>
+<div class="glow glow-three"></div>
+
+<div id="particles"></div>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav
+    class="navbar navbar-expand-lg fixed-top glass-navbar"
+>
+
+    <div class="container">
+
+        <!-- LOGO -->
+
+        <a
+            class="navbar-brand logo"
+            href="index.html"
+        >
+
+            <span class="logo-icon">
+                &lt;/&gt;
+            </span>
+
+            <span>
+                Code<span class="gradient-text">Bridge</span>
+            </span>
+
+        </a>
+
+
+        <!-- MOBILE BUTTON -->
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarMenu"
+        >
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <!-- MENU -->
+
+        <div
+            class="collapse navbar-collapse"
+            id="navbarMenu"
+        >
+
+            <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link active"
+                        href="#home"
+                    >
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="#projects"
+                    >
+                        Projects
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="#developers"
+                    >
+                        Developers
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="#how"
+                    >
+                        How It Works
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="#about"
+                    >
+                        About
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <button
+                class="btn nav-login"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal"
+            >
+
+                Login
+
+            </button>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HERO SECTION
+===================================================== -->
+
+<section
+    id="home"
+    class="hero-section"
+>
+
+    <div class="container">
+
+        <div class="row align-items-center min-vh-100">
+
+
+            <!-- LEFT SIDE -->
+
+            <div class="col-lg-6 hero-content">
+
+                <div class="status-pill">
+
+                    <span class="status-dot"></span>
+
+                    The future of student development
+
+                </div>
+
+
+                <h1 class="hero-title">
+
+                    Where
+
+                    <span class="gradient-text">
+                        Developers
+                    </span>
+
+                    <br>
+
+                    Meet
+
+                    <span class="gradient-text">
+                        Opportunity.
+                    </span>
+
+                </h1>
+
+
+                <p class="hero-description">
+
+                    CodeBridge connects ambitious developers with
+                    real-world coding projects, helping students
+                    turn their skills into experience.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#projects"
+                        class="btn btn-primary-3d"
+                    >
+
+                        Explore Projects
+
+                        <i class="bi bi-arrow-up-right"></i>
+
+                    </a>
+
+
+                    <a
+                        href="#developers"
+                        class="btn btn-outline-3d"
+                    >
+
+                        Find Developers
+
+                    </a>
+
+                </div>
+
+
+                <!-- MINI SOCIAL PROOF -->
+
+                <div class="hero-proof">
+
+                    <div class="avatar-stack">
+
+                        <div class="avatar">
+                            RS
+                        </div>
+
+                        <div class="avatar">
+                            AK
+                        </div>
+
+                        <div class="avatar">
+                            PM
+                        </div>
+
+                        <div class="avatar">
+                            +
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+
+                        <small>
+                            Trusted by student developers
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RIGHT 3D OBJECT -->
+
+            <div class="col-lg-6">
+
+                <div
+                    class="hero-3d"
+                    id="hero3d"
+                >
+
+
+                    <!-- ORBIT -->
+
+                    <div class="orbit orbit-one"></div>
+
+                    <div class="orbit orbit-two"></div>
+
+
+                    <!-- MAIN 3D CUBE -->
+
+                    <div class="cube-wrapper">
+
+                        <div class="cube">
+
+                            <div class="cube-face front">
+                                &lt;/&gt;
+                            </div>
+
+                            <div class="cube-face back">
+                                JS
+                            </div>
+
+                            <div class="cube-face right">
+                                CSS
+                            </div>
+
+                            <div class="cube-face left">
+                                PY
+                            </div>
+
+                            <div class="cube-face top">
+                                SQL
+                            </div>
+
+                            <div class="cube-face bottom">
+                                JAVA
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FLOATING CARD 1 -->
+
+                    <div class="floating-card card-project">
+
+                        <div class="mini-icon purple">
+                            <i class="bi bi-code-slash"></i>
+                        </div>
+
+                        <div>
+
+                            <small>
+                                Active Project
+                            </small>
+
+                            <strong>
+                                AI Dashboard
+                            </strong>
+
+                        </div>
+
+                        <span class="live-dot"></span>
+
+                    </div>
+
+
+                    <!-- FLOATING CARD 2 -->
+
+                    <div class="floating-card card-payment">
+
+                        <i class="bi bi-wallet2"></i>
+
+                        <div>
+
+                            <small>
+                                Project Value
+                            </small>
+
+                            <strong>
+                                ₹8,500
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FLOATING CARD 3 -->
+
+                    <div class="floating-card card-code">
+
+                        <span class="code-green">
+                            ●
+                        </span>
+
+                        <span>
+                            Developer
+                            <strong>Online</strong>
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ALERT
+===================================================== -->
+
+<div class="container">
+
+    <div
+        class="alert glass-alert d-flex align-items-center"
+        role="alert"
+    >
+
+        <i class="bi bi-stars me-3"></i>
+
+        <div>
+
+            <strong>New:</strong>
+
+            Students can now showcase their skills
+            and discover project opportunities.
+
+        </div>
+
+        <button
+            type="button"
+            class="btn-close btn-close-white ms-auto"
+            data-bs-dismiss="alert"
+        ></button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     STATS
+===================================================== -->
+
+<section class="stats-section">
+
+    <div class="container">
+
+        <div class="stats-glass">
+
+            <div class="row g-0">
+
+
+                <div class="col-6 col-lg-3">
+
+                    <div class="stat">
+
+                        <span class="stat-number">
+                            500+
+                        </span>
+
+                        <span class="stat-label">
+                            Developers
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-6 col-lg-3">
+
+                    <div class="stat">
+
+                        <span class="stat-number">
+                            250+
+                        </span>
+
+                        <span class="stat-label">
+                            Projects
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-6 col-lg-3">
+
+                    <div class="stat">
+
+                        <span class="stat-number">
+                            180+
+                        </span>
+
+                        <span class="stat-label">
+                            Completed
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-6 col-lg-3">
+
+                    <div class="stat">
+
+                        <span class="stat-number">
+                            4.9
+                        </span>
+
+                        <span class="stat-label">
+                            Average Rating
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+
+<section
+    id="projects"
+    class="section-padding"
+>
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                OPPORTUNITIES
+            </div>
+
+            <h2>
+                Projects worth
+                <span class="gradient-text">
+                    building.
+                </span>
+            </h2>
+
+            <p>
+                Discover projects from people who need your
+                skills and creativity.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div
+                    class="project-card-3d tilt-card"
+                    data-tilt
+                >
+
+                    <div class="project-top">
+
+                        <span class="project-icon purple-bg">
+                            <i class="bi bi-robot"></i>
+                        </span>
+
+                        <span class="open-badge">
+                            ● Open
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-category">
+                        Artificial Intelligence
+                    </div>
+
+
+                    <h3>
+                        AI Student Assistant
+                    </h3>
+
+
+                    <p>
+                        Build an AI-powered assistant that helps
+                        students manage schedules and academic tasks.
+                    </p>
+
+
+                    <div class="tech-stack">
+
+                        <span>Python</span>
+                        <span>AI</span>
+                        <span>API</span>
+
+                    </div>
+
+
+                    <div class="project-footer">
+
+                        <div>
+
+                            <small>
+                                Budget
+                            </small>
+
+                            <strong>
+                                ₹12,000
+                            </strong>
+
+                        </div>
+
+                        <button
+                            class="round-arrow"
+                            data-bs-toggle="tooltip"
+                            title="View Project"
+                        >
+
+                            <i class="bi bi-arrow-up-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div
+                    class="project-card-3d tilt-card"
+                    data-tilt
+                >
+
+                    <div class="project-top">
+
+                        <span class="project-icon blue-bg">
+                            <i class="bi bi-phone"></i>
+                        </span>
+
+                        <span class="open-badge">
+                            ● Open
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-category">
+                        App Development
+                    </div>
+
+
+                    <h3>
+                        Campus Connect
+                    </h3>
+
+
+                    <p>
+                        Create a mobile platform where students
+                        can communicate and discover campus events.
+                    </p>
+
+
+                    <div class="tech-stack">
+
+                        <span>Java</span>
+                        <span>Firebase</span>
+                        <span>Android</span>
+
+                    </div>
+
+
+                    <div class="project-footer">
+
+                        <div>
+
+                            <small>
+                                Budget
+                            </small>
+
+                            <strong>
+                                ₹10,000
+                            </strong>
+
+                        </div>
+
+                        <button
+                            class="round-arrow"
+                            data-bs-toggle="tooltip"
+                            title="View Project"
+                        >
+
+                            <i class="bi bi-arrow-up-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="col-md-6 col-lg-4">
+
+                <div
+                    class="project-card-3d tilt-card"
+                    data-tilt
+                >
+
+                    <div class="project-top">
+
+                        <span class="project-icon green-bg">
+                            <i class="bi bi-bar-chart"></i>
+                        </span>
+
+                        <span class="open-badge">
+                            ● Open
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-category">
+                        Web Development
+                    </div>
+
+
+                    <h3>
+                        Business Analytics
+                    </h3>
+
+
+                    <p>
+                        Design a modern dashboard for visualizing
+                        business performance and analytics.
+                    </p>
+
+
+                    <div class="tech-stack">
+
+                        <span>HTML</span>
+                        <span>Bootstrap</span>
+                        <span>JS</span>
+
+                    </div>
+
+
+                    <div class="project-footer">
+
+                        <div>
+
+                            <small>
+                                Budget
+                            </small>
+
+                            <strong>
+                                ₹8,500
+                            </strong>
+
+                        </div>
+
+                        <button
+                            class="round-arrow"
+                            data-bs-toggle="tooltip"
+                            title="View Project"
+                        >
+
+                            <i class="bi bi-arrow-up-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="text-center mt-5">
+
+            <a
+                href="projects.html"
+                class="btn btn-outline-3d"
+            >
+
+                Explore All Projects
+
+                <i class="bi bi-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     HOW IT WORKS
+===================================================== -->
+
+<section
+    id="how"
+    class="section-padding dark-section"
+>
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                HOW IT WORKS
+            </div>
+
+            <h2>
+                From idea to
+                <span class="gradient-text">
+                    impact.
+                </span>
+            </h2>
+
+            <p>
+                Three simple steps to turn your skills into
+                real-world experience.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <div class="col-md-4">
+
+                <div class="step-card">
+
+                    <div class="step-number">
+                        01
+                    </div>
+
+                    <div class="step-icon">
+                        <i class="bi bi-person-plus"></i>
+                    </div>
+
+                    <h3>
+                        Create
+                    </h3>
+
+                    <p>
+                        Build your developer profile and showcase
+                        your skills, projects and experience.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="step-card featured-step">
+
+                    <div class="step-number">
+                        02
+                    </div>
+
+                    <div class="step-icon">
+                        <i class="bi bi-search"></i>
+                    </div>
+
+                    <h3>
+                        Connect
+                    </h3>
+
+                    <p>
+                        Discover projects that match your skills
+                        and connect with people looking for developers.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="step-card">
+
+                    <div class="step-number">
+                        03
+                    </div>
+
+                    <div class="step-icon">
+                        <i class="bi bi-rocket-takeoff"></i>
+                    </div>
+
+                    <h3>
+                        Build
+                    </h3>
+
+                    <p>
+                        Complete meaningful projects, earn money
+                        and build your professional portfolio.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DEVELOPERS
+===================================================== -->
+
+<section
+    id="developers"
+    class="section-padding"
+>
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                THE COMMUNITY
+            </div>
+
+            <h2>
+                Meet the people
+                <span class="gradient-text">
+                    building tomorrow.
+                </span>
+            </h2>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <!-- DEVELOPER 1 -->
+
+            <div class="col-md-4">
+
+                <div class="developer-card tilt-card">
+
+                    <div class="developer-avatar avatar-purple">
+                        AS
+                    </div>
+
+                    <h3>
+                        Aarav Sharma
+                    </h3>
+
+                    <span>
+                        Full Stack Developer
+                    </span>
+
+                    <div class="developer-skills">
+
+                        <span>React</span>
+                        <span>Node</span>
+                        <span>MongoDB</span>
+
+                    </div>
+
+                    <div class="developer-bottom">
+
+                        <div class="rating">
+                            ★ 4.9
+                        </div>
+
+                        <small>
+                            12 Projects
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DEVELOPER 2 -->
+
+            <div class="col-md-4">
+
+                <div class="developer-card tilt-card">
+
+                    <div class="developer-avatar avatar-blue">
+                        RP
+                    </div>
+
+                    <h3>
+                        Riya Patel
+                    </h3>
+
+                    <span>
+                        UI/UX Designer
+                    </span>
+
+                    <div class="developer-skills">
+
+                        <span>Figma</span>
+                        <span>UI</span>
+                        <span>UX</span>
+
+                    </div>
+
+                    <div class="developer-bottom">
+
+                        <div class="rating">
+                            ★ 4.8
+                        </div>
+
+                        <small>
+                            18 Projects
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DEVELOPER 3 -->
+
+            <div class="col-md-4">
+
+                <div class="developer-card tilt-card">
+
+                    <div class="developer-avatar avatar-green">
+                        VK
+                    </div>
+
+                    <h3>
+                        Vikram Kumar
+                    </h3>
+
+                    <span>
+                        Python Developer
+                    </span>
+
+                    <div class="developer-skills">
+
+                        <span>Python</span>
+                        <span>AI</span>
+                        <span>SQL</span>
+
+                    </div>
+
+                    <div class="developer-bottom">
+
+                        <div class="rating">
+                            ★ 5.0
+                        </div>
+
+                        <small>
+                            9 Projects
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TESTIMONIAL CAROUSEL
+===================================================== -->
+
+<section class="section-padding testimonial-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                COMMUNITY STORIES
+            </div>
+
+            <h2>
+                Built by students,
+                <span class="gradient-text">
+                    trusted by people.
+                </span>
+            </h2>
+
+        </div>
+
+
+        <div
+            id="testimonialCarousel"
+            class="carousel slide"
+            data-bs-ride="carousel"
+        >
+
+            <div class="carousel-inner">
+
+
+                <div class="carousel-item active">
+
+                    <div class="testimonial-card">
+
+                        <div class="quote">
+                            "
+                        </div>
+
+                        <p>
+                            CodeBridge helped me find my first real
+                            development project. It gave me experience
+                            that I could actually put on my portfolio.
+                        </p>
+
+                        <strong>
+                            — Student Developer
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="carousel-item">
+
+                    <div class="testimonial-card">
+
+                        <div class="quote">
+                            "
+                        </div>
+
+                        <p>
+                            Finding someone with the exact technical
+                            skills we needed became much easier.
+                        </p>
+
+                        <strong>
+                            — Project Client
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#testimonialCarousel"
+                data-bs-slide="prev"
+            >
+
+                <span class="carousel-control-prev-icon"></span>
+
+            </button>
+
+
+            <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#testimonialCarousel"
+                data-bs-slide="next"
+            >
+
+                <span class="carousel-control-next-icon"></span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta-section">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <div class="cta-glow"></div>
+
+            <div class="position-relative">
+
+                <div class="section-label">
+                    YOUR NEXT PROJECT STARTS HERE
+                </div>
+
+                <h2>
+                    Stop waiting.
+                    <br>
+
+                    <span class="gradient-text">
+                        Start building.
+                    </span>
+                </h2>
+
+                <p>
+                    Your skills deserve a real opportunity.
+                </p>
+
+
+                <button
+                    class="btn btn-primary-3d btn-lg"
+                    data-bs-toggle="modal"
+                    data-bs-target="#projectModal"
+                >
+
+                    Post Your Project
+
+                    <i class="bi bi-arrow-up-right"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LOGIN MODAL
+===================================================== -->
+
+<div
+    class="modal fade"
+    id="loginModal"
+    tabindex="-1"
+>
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content dark-modal">
+
+            <div class="modal-header border-secondary">
+
+                <h5 class="modal-title">
+
+                    Welcome back
+
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close btn-close-white"
+                    data-bs-dismiss="modal"
+                ></button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <form id="loginForm" novalidate>
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            class="form-control dark-input"
+                            required
+                            placeholder="you@example.com"
+                        >
+
+                        <div class="invalid-feedback">
+                            Enter a valid email.
+                        </div>
+
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            class="form-control dark-input"
+                            minlength="6"
+                            required
+                            placeholder="••••••••"
+                        >
+
+                        <div class="invalid-feedback">
+                            Password must contain at least 6 characters.
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="btn btn-primary-3d w-100"
+                        type="submit"
+                    >
+
+                        Login
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     PROJECT MODAL
+===================================================== -->
+
+<div
+    class="modal fade"
+    id="projectModal"
+    tabindex="-1"
+>
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content dark-modal">
+
+            <div class="modal-header border-secondary">
+
+                <h5 class="modal-title">
+                    Post a Project
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close btn-close-white"
+                    data-bs-dismiss="modal"
+                ></button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <form id="projectForm" novalidate>
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Project Name
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control dark-input"
+                            required
+                            placeholder="e.g. E-commerce Website"
+                        >
+
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Technology
+                        </label>
+
+                        <select
+                            class="form-select dark-input"
+                            required
+                        >
+
+                            <option value="">
+                                Select technology
+                            </option>
+
+                            <option>
+                                Web Development
+                            </option>
+
+                            <option>
+                                Python
+                            </option>
+
+                            <option>
+                                Java
+                            </option>
+
+                            <option>
+                                Mobile App
+                            </option>
+
+                            <option>
+                                AI / ML
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Project Description
+                        </label>
+
+                        <textarea
+                            class="form-control dark-input"
+                            rows="4"
+                            required
+                            placeholder="Describe your project..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        class="btn btn-primary-3d w-100"
+                        type="submit"
+                    >
+
+                        Submit Project
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="row g-5">
+
+
+            <div class="col-lg-5">
+
+                <a
+                    href="#home"
+                    class="logo footer-logo"
+                >
+
+                    <span class="logo-icon">
+                        &lt;/&gt;
+                    </span>
+
+                    Code<span class="gradient-text">
+                        Bridge
+                    </span>
+
+                </a>
+
+
+                <p class="footer-description">
+
+                    A student-focused platform connecting
+                    developers with meaningful coding opportunities.
+
+                </p>
+
+
+                <div class="socials">
+
+                    <a href="#">
+                        <i class="bi bi-github"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-lg-2">
+
+                <h5>
+                    Platform
+                </h5>
+
+                <ul class="footer-links list-group">
+
+                    <li class="list-group-item">
+                        Projects
+                    </li>
+
+                    <li class="list-group-item">
+                        Developers
+                    </li>
+
+                    <li class="list-group-item">
+                        Opportunities
+                    </li>
+
+                    <li class="list-group-item">
+                        Community
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="col-6 col-lg-2">
+
+                <h5>
+                    Company
+                </h5>
+
+                <ul class="footer-links list-group">
+
+                    <li class="list-group-item">
+                        About
+                    </li>
+
+                    <li class="list-group-item">
+                        Contact
+                    </li>
+
+                    <li class="list-group-item">
+                        Careers
+                    </li>
+
+                    <li class="list-group-item">
+                        Privacy
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="col-lg-3">
+
+                <h5>
+                    Get in touch
+                </h5>
+
+                <p class="footer-contact">
+                    hello@codebridge.com
+                </p>
+
+                <p class="footer-contact">
+                    Pune, Maharashtra
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <hr>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 CodeBridge
+            </span>
+
+            <span>
+                Built with Bootstrap 5
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/script.js"></script>
+
+<script>
+
+/* =====================================================
+   TOOLTIP
+===================================================== */
+
+const tooltipTriggerList =
+    document.querySelectorAll(
+        '[data-bs-toggle="tooltip"]'
+    );
+
+tooltipTriggerList.forEach(
+    element => new bootstrap.Tooltip(element)
+);
+
+
+
+/* =====================================================
+   3D MOUSE PARALLAX
+===================================================== */
+
+const hero = document.getElementById("hero3d");
+
+document.addEventListener("mousemove", function(e) {
+
+    if (!hero) return;
+
+    const x =
+        (window.innerWidth / 2 - e.clientX) / 35;
+
+    const y =
+        (window.innerHeight / 2 - e.clientY) / 35;
+
+    hero.style.transform =
+        `rotateY(${x}deg) rotateX(${-y}deg)`;
+
+});
+
+
+
+/* =====================================================
+   TILT CARDS
+===================================================== */
+
+const cards =
+    document.querySelectorAll(".tilt-card");
+
+cards.forEach(card => {
+
+    card.addEventListener("mousemove", function(e) {
+
+        const rect =
+            card.getBoundingClientRect();
+
+        const x =
+            e.clientX - rect.left;
+
+        const y =
+            e.clientY - rect.top;
+
+        const centerX =
+            rect.width / 2;
+
+        const centerY =
+            rect.height / 2;
+
+        const rotateX =
+            ((y - centerY) / centerY) * -5;
+
+        const rotateY =
+            ((x - centerX) / centerX) * 5;
+
+        card.style.transform =
+            `perspective(1000px)
+             rotateX(${rotateX}deg)
+             rotateY(${rotateY}deg)
+             translateY(-8px)`;
+
+    });
+
+
+    card.addEventListener("mouseleave", function() {
+
+        card.style.transform =
+            "perspective(1000px) rotateX(0) rotateY(0)";
+
+    });
+
+});
+
+
+
+/* =====================================================
+   PARTICLES
+===================================================== */
+
+const particleContainer =
+    document.getElementById("particles");
+
+for (let i = 0; i < 45; i++) {
+
+    const particle =
+        document.createElement("span");
+
+    particle.classList.add("particle");
+
+    particle.style.left =
+        Math.random() * 100 + "%";
+
+    particle.style.top =
+        Math.random() * 100 + "%";
+
+    particle.style.animationDelay =
+        Math.random() * 6 + "s";
+
+    particle.style.animationDuration =
+        4 + Math.random() * 6 + "s";
+
+    particleContainer.appendChild(particle);
+
+}
+
+
+
+/* =====================================================
+   LOGIN VALIDATION
+===================================================== */
+
+const loginForm =
+    document.getElementById("loginForm");
+
+loginForm.addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+        if (!loginForm.checkValidity()) {
+
+            event.stopPropagation();
+
+        } else {
+
+            alert(
+                "Login successful! Welcome to CodeBridge."
+            );
+
+            bootstrap.Modal
+                .getInstance(
+                    document.getElementById("loginModal")
+                )
+                .hide();
+
+        }
+
+        loginForm.classList.add(
+            "was-validated"
+        );
+
+    }
+);
+
+
+
+/* =====================================================
+   PROJECT FORM VALIDATION
+===================================================== */
+
+const projectForm =
+    document.getElementById("projectForm");
+
+projectForm.addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+        if (!projectForm.checkValidity()) {
+
+            event.stopPropagation();
+
+        } else {
+
+            alert(
+                "Your project has been submitted successfully!"
+            );
+
+            bootstrap.Modal
+                .getInstance(
+                    document.getElementById("projectModal")
+                )
+                .hide();
+
+            projectForm.reset();
+
+        }
+
+        projectForm.classList.add(
+            "was-validated"
+        );
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
